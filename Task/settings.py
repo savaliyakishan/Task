@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-fxbx!+u$54kgf_o$+-1a5&m1rmb8vmkchb)+=lk-%h9uru)gu%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'App'
+    'App',
+    'graphene_django',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+GRAPHENE = {
+    'SCHEMA': 'App.schema.schema'  # Where your Graphene schema lives
+}
